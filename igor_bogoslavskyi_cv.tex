@@ -57,8 +57,58 @@ bubble node/.append style={text=white}
 \RequirePackage{xcolor}
 \definecolor{pblue}{HTML}{0395DE}
 
+% TODO: correct the indentation of personal information
+% TODO: edit content of job expeirience and projects
+% TODO: correct dates job experience and projects
+% ---------------------------------------------------------
+% Custom experience entry
+% ---------------------------------------------------------
+
+% Bullet with hanging indentation
+\newcommand{\cvbullet}[1]{%
+    \par
+    \noindent
+    \small
+    \hangindent=2em
+    \hangafter=1
+    \hspace{0.8em}\textbullet\hspace{0.6em}#1%
+    \par
+    \vspace{0.01em}
+}
+
+% #1 = Position
+% #2 = Date
+% #3 = Company / Location
+% #4 = Project / Description
+\newcommand{\experienceentry}[4]{%
+    \par
+    \vspace{0.5em}
+
+    % Position
+    \noindent
+    \textbf{#1}\par
+
+    % Date + Company
+    \noindent
+    {\small #2}
+    \hspace{0.15em}
+    {\small\addfontfeature{Color=pblue}#3}\par
+
+    \vspace{0.25em}
+}
+
+% Project within the same work experience
+% #1 = Project title
+\newcommand{\experienceproject}[1]{%
+    \par
+    \vspace{0.35em}
+    \noindent
+    {\small #1}\par
+    \vspace{0.05em}
+}
+
 \begin{document}
-\header{      CAMARENA }{Francesca}
+\header{        CAMARENA }{Francesca}
 {Robotics | Software Engineer | Mechatronics Engineer}
 
 % % Fake text to add separator
@@ -84,7 +134,7 @@ bubble node/.append style={text=white}
     ~
   \section{Mail}
     ~
-    \href{mailto:14.francesca.camanrena@gmail.com}{\small\texttt{14.francesca.camanrena@gmail.com}}
+    \href{mailto:cuycorp@gmail.com}{\small\texttt{cuycorp@gmail.com}}
     ~
   % use \expand{margin}{what}to change bubble size, if needed
   \section{Programming}
@@ -115,32 +165,99 @@ bubble node/.append style={text=white}
 \end{aside}
 ~
 \section{Experience}
-\begin{entrylist}
-  \entry
-    {December 2023 - July 2024}
-    {Data Science \& New Technologies Consultant\\}
-    {Management Solutions, Lima, Peru}
-    {Digital transformation — retail banking automation. \\
-    I worked on a project to automate the process of credit risk assessment for a retail bank. \\
-    I developed a machine learning model that predicts the probability of default for each customer based on their financial history and demographic information.
-    ck also worked on a project to develop a chatbot that can answer customer queries about their accounts and transactions. I used natural language processing techniques to train the chatbot to understand and respond to customer questions.}
-  \entry
-    {July 2023 - December 2023}
-    {Information and Technology Intern}
-    {World Food Programme | United Nations, Lima, Peru}
-    {I worked as part of a small perception team developing the first ever autonomous delivery bot. My work focused on LiDAR scene segmentation, sensor fusion, and sensor calibration. I was fully responsible for all software for cameras and LiDAR calibration.\\}
-  \entry
-    {January 2023 - June 2023}
-    {Application Engineer}
-    {Andes Technology, Lima, Peru}
-    {I was the first student at the lab and have set up all the lab infrastructure including a full CI setup. Scientifically I have worked on various topics such as mobile robot navigation, range-based scene interpretation, and mapping. I published at top-tier international conferences such as ICRA and IROS and my code is available as open source.\\}
-  \entry
-    {December 2021 - November 2022}
-    {Industrial Engineering Assistant}
-    {Creditex, Lima, Peru}
-    {As a research assistant in the Autonomous Intelligent Systems lab at the University of Freiburg, led by Prof.~Dr.~Wolfram Burdard, I dealt with Kinect RGBD sensors mounted onto various platforms. I have implemented traversability analysis for a mobile robot as part of the ROVINA project. The developments in this project led to a publication at ECMR already during my masters.\\}
 
-\end{entrylist}
+% ---------------------------------------------------------
+% Data Science & New Technologies Consultant
+% ---------------------------------------------------------
+
+
+\experienceentry
+    {Data Science \& New Technologies Consultant}
+    {December 2023 -- July 2024 |}
+    {Management Solutions, Lima, Peru}
+
+\experienceproject{Digital transformation --- retail banking automation}
+
+\cvbullet{Diagnosed inefficiencies in retail banking loan contract workflows (duplicity, non-traceability, inconsistent formatting) and designed TO-BE process models to address them.}
+
+\cvbullet{Led cross-functional workshops with legal, security and business stakeholders to validate process redesigns and drive alignment on proposed solutions.}
+
+\cvbullet{Created a standardized catalog of covenant clauses in coordination with legal teams.}
+
+\experienceproject{Cloud migration --- Cloudera to Azure Datalake}
+
+\cvbullet{Migrated critical data pipelines for Peru's largest banking entity from Cloudera to Azure, working hands-on with Spark, Hive, PySpark and SQL.}
+
+\cvbullet{Configured Bitbucket repositories, refactored legacy code to PySpark standards, and validated data integrity.}
+
+\cvbullet{Diagnosed and resolved pipeline incidents post-migration, applying structured debugging and data reconciliation at scale.}
+
+% ---------------------------------------------------------
+% Information & Technology Intern
+% ---------------------------------------------------------
+
+\experienceentry
+    {Information \& Technology Intern}
+    {2022}
+    {United Nations -- World Food Programme (WFP)}
+
+\experienceproject{Process Automation · Power Automate · Power BI · SAP Requirements Analysis · Cross-team Collaboration}
+
+\cvbullet{Identified automation opportunities across CBT, HR and TEC divisions by conducting structured interviews with internal stakeholders.}
+
+\cvbullet{Designed and deployed automated workflows using Power Automate, Power BI and Power Query, reducing manual effort on routine operations and freeing capacity for higher-value work.}
+
+\cvbullet{Advised WFP programs on adopting new technologies for data recording, processing and storage -- demonstrating the ability to translate technical solutions into organizational impact.}
+
+\cvbullet{Co-designed the CLTF vertical articulation project to strengthen local food supply chains, combining data-driven analysis with cross-program coordination across multiple stakeholders.}
+
+
+% ---------------------------------------------------------
+% Application Engineer → Project Analyst
+% ---------------------------------------------------------
+
+\experienceentry
+    {Application Engineer $\rightarrow$ Project Analyst}
+    {2020 -- 2021}
+    {Andes Technology S.A.C.}
+
+\experienceproject{Project Management · KUKA · Inventor · 3D Simulation · Client Engagement}
+
+\cvbullet{Led pre-engineering design for automation projects with clients, managing scope, milestones and stakeholder expectations from first contact to delivery.}
+
+\cvbullet{Designed automation systems and ran dynamic simulations of KUKA robots using Inventor and KUKA Sim, translating client requirements into viable technical proposals.}
+
+\cvbullet{Conducted on-site visits to collect requirements and identify pain points.}
+
+\cvbullet{Developed and delivered 3D printer training sessions for client personnel.}
+
+
+% ---------------------------------------------------------
+% Industrial Engineering Trainee
+% ---------------------------------------------------------
+
+\experienceentry
+    {Industrial Engineering Trainee}
+    {2019 -- 2020}
+    {Creditex S.A.}
+
+\experienceproject{Python · PLC · Power BI · Machine Vision · Automation UI \& Database Design · Project Planning}
+
+\cvbullet{Designed and built an automated fabric quality inspection system -- selecting components, implementing M2M communication between PC and PLC via Python, and creating a defect-detection database.}
+
+\cvbullet{Built a user interface for image registration and quality statistics display, applying product and UX sensibility to an industrial context.}
+
+\cvbullet{Developed Power BI dashboards used by area supervisors to coordinate quality control operations, bridging technical data and operational decision making.}
+
+\cvbullet{Managed project milestones and a 2-person team using Microsoft Project, delivering on time within tight manufacturing constraints.}
+
+
+
+
+
+
+
+
 \section{Selected Projects}
 \begin{entrylist}
   \entry

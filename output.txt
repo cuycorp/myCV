@@ -1,0 +1,29 @@
+.
+├── cv.sublime-project
+├── dtklogos.sty
+├── friggeri-cv.cls
+├── igor_bogoslavskyi_cv.aux
+├── igor_bogoslavskyi_cv.bcf
+├── igor_bogoslavskyi_cv.log
+├── igor_bogoslavskyi_cv.out
+├── igor_bogoslavskyi_cv.pdf
+├── igor_bogoslavskyi_cv.run.xml
+├── igor_bogoslavskyi_cv.tex
+├── img
+│   ├── 1stars.png
+│   ├── 2stars.png
+│   ├── 3stars.png
+│   ├── 4stars.png
+│   ├── 5stars.png
+│   ├── igor.jpg
+│   ├── italia.png
+│   └── snow_circle.png
+├── Lato-Hairline.ttf
+├── output.txt
+├── README.md
+├── texgyreheros-bolditalic.otf
+├── texgyreheros-bold.otf
+├── texgyreheros-italic.otf
+└── texgyreheros-regular.otf
+
+2 directories, 25 files
